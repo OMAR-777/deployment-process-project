@@ -24,29 +24,25 @@ jobs:
             echo "NPM --version" 
             echo $(npm --version)
             npm run frontend:install
-      # TODO: Install dependencies in the the backend API          
+      # Use root level package.json to install dependencies in the backend app       
       - run:
           name: Install API Dependencies
           command: |
-           echo "TODO: Install dependencies in the the backend API  "
            npm run api:install
-      # TODO: Lint the frontend
+      # Use root level package.json to lint the frontend app
       - run:
           name: Front-End Lint
           command: |
-            echo "TODO: Lint the frontend"
             npm run frontend:lint
-      # TODO: Build the frontend app
+      # Use root level package.json to build the frontend app
       - run:
           name: Front-End Build
           command: |
-            echo "TODO: Build the frontend app"
             npm run frontend:build
-      # TODO: Build the backend API      
+      # Use root level package.json to build the backend app
       - run:
           name: API Build
           command: |
-            echo "TODO: Build the backend API"
             npm run api:build
   # deploy step will run only after manual approval
   deploy:
@@ -61,9 +57,9 @@ jobs:
       - checkout
       - run:
           name: Deploy App
-          # TODO: Install, build, deploy in both apps
+          # Use root level package.json to deploy both apps
+          # The following single command will take care of installing, building and deploying both apps
           command: |
-            echo "# TODO: Install, build, deploy in both apps"
             npm run deploy
             
 workflows:
