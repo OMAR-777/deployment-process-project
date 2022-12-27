@@ -58,7 +58,7 @@ jobs:
       - run:
           name: Deploy App
           # Use root level package.json to deploy both apps
-          # The following single command will take care of installing, building and deploying both apps
+          # The following single command will take care of setting up env variables, installing, building and deploying both apps
           command: |
             npm run deploy
             
